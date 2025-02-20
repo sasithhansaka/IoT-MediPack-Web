@@ -1,32 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
-    background: #f4f4f9;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
 }
-
-h2 {
-    color: #333;
+.container {
+  width: 300px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
-
-input {
-    padding: 10px;
-    margin: 10px;
-    width: 80%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
+input,
+select,
 button {
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
 }
-
-button:hover {
-    background: #0056b3;
+button {
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
