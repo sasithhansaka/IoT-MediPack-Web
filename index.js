@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// Firebase Initialization
+>>>>>>> 78704a64904a2b7650a3b9c91f38b4073fcd5fca
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
   getAuth,
@@ -33,9 +37,9 @@ registerBtn.addEventListener("click", async () => {
     );
     const user = userCredential.user;
 
-    const userData = { userType, email };
+    const userData = { userType,email };
     if (userType === "doctor") {
-      userData.status = "pending"; // Doctor needs approval
+      userData.status = "pending"; 
     }
 
     await setDoc(doc(db, "users", user.uid), userData);
@@ -93,3 +97,26 @@ function redirectToDashboard(userType) {
       alert("Unknown user type");
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginContainer = document.getElementById("login");
+  const registerContainer = document.getElementById("register");
+
+  const showRegisterBtn = document.querySelector("#login p b");
+  const showLoginBtn = document.querySelector("#register p b");
+
+  // Initially, show login and hide register
+  registerContainer.style.display = "none";
+
+  // Show register form when clicking "Don't have an account? Register"
+  showRegisterBtn.addEventListener("click", function () {
+    loginContainer.style.display = "none";
+    registerContainer.style.display = "block";
+  });
+
+  // Show login form when clicking "Have an account? Login"
+  showLoginBtn.addEventListener("click", function () {
+    registerContainer.style.display = "none";
+    loginContainer.style.display = "block";
+  });
+});

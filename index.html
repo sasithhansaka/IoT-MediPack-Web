@@ -8,21 +8,70 @@
   </head>
   <body>
     <div class="container">
-      <div id="register">
-        <h2>Register</h2>
-        <input type="email" id="regEmail" placeholder="Email" />
-        <input type="password" id="regPassword" placeholder="Password" />
-        <select id="userType">
-          <option value="patient">Patient</option>
-          <option value="doctor">Doctor</option>
-        </select>
-        <button id="registerBtn">Register</button>
-      </div>
-      <div id="login">
-        <h2>Login</h2>
-        <input type="email" id="loginEmail" placeholder="Email" />
-        <input type="password" id="loginPassword" placeholder="Password" />
-        <button id="loginBtn">Login</button>
+      <div class="profile-container">
+        <div class="adveritisement-container">
+          <div class="brand-name-contaniner">
+            <p class="disc">make your medicine routine easy with us</p>
+            <p style="margin-left: 40px; margin-top: 10px"><b>MEDI PACK</b></p>
+          </div>
+          <p class="brand-name-site">www.medipack.com</p>
+        </div>
+        <div class="register-container">
+          <div id="login">
+            <h2>LOGIN</h2>
+            <h3>login to your brand account</h3>
+            <p>Email</p>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="your email address"
+            />
+
+            <p>Password</p>
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="your password"
+            />
+
+            <button id="loginBtn">SIGN IN</button>
+            <p style="margin-top: 10px; font-weight: 200; cursor: pointer">
+              dont have a account ? <b>Register</b>
+            </p>
+          </div>
+        </div>
+        <div class="register-container">
+          <div id="register">
+            <h2>REGISTER</h2>
+            <h3>register to your medipack account</h3>
+
+            <p>Email</p>
+
+            <input
+              type="email"
+              id="regEmail"
+              placeholder="your email address"
+            />
+            <p>Password</p>
+
+            <input
+              type="password"
+              id="regPassword"
+              placeholder="Your Password"
+            />
+            <p>Patient Type</p>
+
+            <select id="userType">
+              <option value="patient">Patient</option>
+              <option value="doctor">Doctor</option>
+            </select>
+            <button id="registerBtn">Register</button>
+            <p style="margin-top: 10px; font-weight: 200; cursor: pointer">
+              have a account ? <b>login</b>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <script type="module" src="./index.js" defer></script>
