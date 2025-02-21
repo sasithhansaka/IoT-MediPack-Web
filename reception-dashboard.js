@@ -56,7 +56,7 @@ const db = getFirestore(app);
 
 async function loadPendingDoctors() {
   const doctorsList = document.getElementById("pendingDoctorsList");
-  doctorsList.innerHTML = ""; // Clear previous data
+  doctorsList.innerHTML = ""; 
 
   const q = query(
     collection(db, "users"),
@@ -69,9 +69,9 @@ async function loadPendingDoctors() {
     const doctor = docSnapshot.data();
     const doctorItem = document.createElement("li");
 
-    doctorItem.style.position = "relative"; // To allow absolute positioning of the button
+    doctorItem.style.position = "relative";
     doctorItem.style.padding = "10px";
-    doctorItem.style.listStyleType = "none"; // Removes the default bullet point
+    doctorItem.style.listStyleType = "none";
 
     doctorItem.innerHTML = `
       <span>${doctor.email}</span>
