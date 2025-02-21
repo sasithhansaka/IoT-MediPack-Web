@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-// Firebase Initialization
->>>>>>> ef46e3c7cb3fef1b13ac45d9e52fe85442645deb
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
   getAuth,
@@ -77,7 +72,7 @@ loginBtn.addEventListener("click", async () => {
       return;
     }
 
-    redirectToDashboard(userData.userType ,email);
+    redirectToDashboard(userData.userType, email);
   } catch (error) {
     alert(error.message);
   }
@@ -109,9 +104,6 @@ function redirectToDashboard(userType, email) {
 
   window.location.href = dashboardUrl;
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginContainer = document.getElementById("login");
