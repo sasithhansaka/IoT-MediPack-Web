@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+// Firebase Initialization
+>>>>>>> ef46e3c7cb3fef1b13ac45d9e52fe85442645deb
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
   getAuth,
@@ -72,27 +77,41 @@ loginBtn.addEventListener("click", async () => {
       return;
     }
 
-    redirectToDashboard(userData.userType);
+    redirectToDashboard(userData.userType ,email);
   } catch (error) {
     alert(error.message);
   }
 });
 
-function redirectToDashboard(userType) {
+function redirectToDashboard(userType, email) {
+  if (email) {
+    localStorage.setItem("userEmail", email); // Store email before redirecting
+    console.log("Email stored in localStorage:", email);
+  } else {
+    console.error("Email is undefined, cannot store in localStorage.");
+  }
+
+  let dashboardUrl = "";
   switch (userType) {
     case "reception":
-      window.location.href = "reception-dashboard.html";
+      dashboardUrl = "reception-dashboard.html";
       break;
     case "patient":
-      window.location.href = "patient-dashboard.html";
+      dashboardUrl = "patient-dashboard.html";
       break;
     case "doctor":
-      window.location.href = "doctor-dashboard.html";
+      dashboardUrl = "doctor-dashboard.html";
       break;
     default:
       alert("Unknown user type");
+      return;
   }
+
+  window.location.href = dashboardUrl;
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginContainer = document.getElementById("login");
@@ -101,10 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const showRegisterBtn = document.querySelector("#login p b");
   const showLoginBtn = document.querySelector("#register p b");
 
-  // Initially, show login and hide register
   registerContainer.style.display = "none";
 
-  // Show register form when clicking "Don't have an account? Register"
   showRegisterBtn.addEventListener("click", function () {
     loginContainer.style.display = "none";
     registerContainer.style.display = "block";
