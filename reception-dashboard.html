@@ -12,6 +12,27 @@
       <ul id="pendingDoctorsList"></ul>
     </div>
 
+    <div class="container">
+      <h2>Add Medicine</h2>
+      <form id="medicineForm">
+        <input
+          type="text"
+          id="medicineName"
+          placeholder="Medicine Name"
+          required
+        />
+        <input
+          type="number"
+          id="medicineQuantity"
+          placeholder="Quantity"
+          required
+        />
+        <button type="submit">Add Medicine</button>
+      </form>
+      <h3>Available Medicines</h3>
+      <ul id="medicineList"></ul>
+    </div>
+
     <script type="module" src="reception-dashboard.js"></script>
   </body>
 </html>

@@ -7,6 +7,8 @@ import {
   getDocs,
   updateDoc,
   doc,
+  addDoc,
+  onSnapshot,
 } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 import firebaseConfig from "./firebaseConfig.js";
 
@@ -51,5 +53,51 @@ async function approveDoctor(doctorId) {
   loadPendingDoctors(); // Reload the list
 }
 
+// Add Medicine
+document
+  .getElementById("medicineForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const medicineName = document.getElementById("medicineName").value.trim();
+    const medicineQuantity = document
+      .getElementById("medicineQuantity")
+      .value.trim();
+
+    if (medicineName === "" || medicineQuantity === "") {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "medicines"), {
+        name: medicineName,
+        quantity: parseInt(medicineQuantity, 10),
+      });
+
+      document.getElementById("medicineForm").reset();
+      alert("Medicine added successfully!");
+    } catch (error) {
+      console.error("Error adding medicine:", error);
+      alert("Failed to add medicine.");
+    }
+  });
+
+// Load Medicines in Real-time
+function loadMedicines() {
+  const medicineList = document.getElementById("medicineList");
+
+  onSnapshot(collection(db, "medicines"), (snapshot) => {
+    medicineList.innerHTML = "";
+    snapshot.forEach((docSnapshot) => {
+      const medicine = docSnapshot.data();
+      const listItem = document.createElement("li");
+      listItem.textContent = `${medicine.name} - ${medicine.quantity}`;
+      medicineList.appendChild(listItem);
+    });
+  });
+}
+
 // Load pending doctors on page load
 loadPendingDoctors();
+loadMedicines();

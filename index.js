@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-// Firebase Initialization
->>>>>>> 78704a64904a2b7650a3b9c91f38b4073fcd5fca
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
   getAuth,
@@ -37,9 +33,9 @@ registerBtn.addEventListener("click", async () => {
     );
     const user = userCredential.user;
 
-    const userData = { userType,email };
+    const userData = { userType, email };
     if (userType === "doctor") {
-      userData.status = "pending"; 
+      userData.status = "pending";
     }
 
     await setDoc(doc(db, "users", user.uid), userData);
