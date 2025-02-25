@@ -8,14 +8,12 @@ import {
   updateDoc,
   doc,
   addDoc,
-
-  onSnapshot
+  onSnapshot,
 } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 import firebaseConfig from "./firebaseConfig.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 
 // const modal = document.getElementById("medicineModal");
 // const openFormBtn = document.getElementById("openMedicineForm");
@@ -37,7 +35,7 @@ const db = getFirestore(app);
 //     const doctor = docSnapshot.data();
 //     const doctorItem = document.createElement("li");
 //     doctorItem.innerHTML = `
-//             ${doctor.email} 
+//             ${doctor.email}
 //             <button class="accept-btn" data-id="${docSnapshot.id}">Accept</button>
 //         `;
 //     doctorsList.appendChild(doctorItem);
@@ -52,11 +50,9 @@ const db = getFirestore(app);
 //   });
 // }
 
-
-
 async function loadPendingDoctors() {
   const doctorsList = document.getElementById("pendingDoctorsList");
-  doctorsList.innerHTML = ""; 
+  doctorsList.innerHTML = "";
 
   const q = query(
     collection(db, "users"),
@@ -81,10 +77,6 @@ async function loadPendingDoctors() {
     doctorsList.appendChild(doctorItem);
   });
 
-
-
-
-  // Add CSS styles for the accept button
   document.querySelectorAll(".accept-btn").forEach((button) => {
     button.style.backgroundColor = "black";
     button.style.borderRadius = "5px";
@@ -93,8 +85,7 @@ async function loadPendingDoctors() {
     button.style.padding = "10px 15px";
     button.style.position = "absolute";
     button.style.right = "5px";
-    button.style.cursor = "pointer"; // Makes it look clickable
-
+    button.style.cursor = "pointer";
 
     button.addEventListener("click", async (event) => {
       const doctorId = event.target.getAttribute("data-id");
@@ -140,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   modal.style.display = "none";
 // });
 
-
 // const fetchMedicines = async () => {
 //   const querySnapshot = await getDocs(collection(db, "medicines"));
 //   medicineList.innerHTML = ""; // Clear previous entries
@@ -157,8 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // };
 
-
-
 // // Live Update: Listen for Real-Time Changes
 // onSnapshot(collection(db, "medicines"), (snapshot) => {
 //   medicineList.innerHTML = "";
@@ -172,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //       </tr>`;
 //   });
 // });
-
 
 // fetchMedicines();
 // // Submit Form & Save to Firestore
