@@ -1,5 +1,3 @@
-
-// Firebase Initialization
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
   getAuth,
@@ -35,9 +33,9 @@ registerBtn.addEventListener("click", async () => {
     );
     const user = userCredential.user;
 
-    const userData = { userType,email };
+    const userData = { userType, email };
     if (userType === "doctor") {
-      userData.status = "pending"; 
+      userData.status = "pending";
     }
 
     await setDoc(doc(db, "users", user.uid), userData);
@@ -74,7 +72,7 @@ loginBtn.addEventListener("click", async () => {
       return;
     }
 
-    redirectToDashboard(userData.userType ,email);
+    redirectToDashboard(userData.userType, email);
   } catch (error) {
     alert(error.message);
   }
@@ -106,9 +104,6 @@ function redirectToDashboard(userType, email) {
 
   window.location.href = dashboardUrl;
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginContainer = document.getElementById("login");

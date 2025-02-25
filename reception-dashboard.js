@@ -15,6 +15,7 @@ import firebaseConfig from "./firebaseConfig.js";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+<<<<<<< HEAD
 // const modal = document.getElementById("medicineModal");
 // const openFormBtn = document.getElementById("openMedicineForm");
 // const closeBtn = document.querySelector(".close-btn");
@@ -50,6 +51,9 @@ const db = getFirestore(app);
 //   });
 // }
 
+=======
+// Load Pending Doctors
+>>>>>>> bfd44405ef7df65febc44de06fdc871b42fce7c7
 async function loadPendingDoctors() {
   const doctorsList = document.getElementById("pendingDoctorsList");
   doctorsList.innerHTML = "";
@@ -64,20 +68,15 @@ async function loadPendingDoctors() {
   querySnapshot.forEach((docSnapshot) => {
     const doctor = docSnapshot.data();
     const doctorItem = document.createElement("li");
-
-    doctorItem.style.position = "relative";
-    doctorItem.style.padding = "10px";
-    doctorItem.style.listStyleType = "none";
-
     doctorItem.innerHTML = `
-      <span>${doctor.email}</span>
+      ${doctor.email} 
       <button class="accept-btn" data-id="${docSnapshot.id}">Accept</button>
     `;
-
     doctorsList.appendChild(doctorItem);
   });
 
   document.querySelectorAll(".accept-btn").forEach((button) => {
+<<<<<<< HEAD
     button.style.backgroundColor = "black";
     button.style.borderRadius = "5px";
     button.style.color = "white";
@@ -87,6 +86,8 @@ async function loadPendingDoctors() {
     button.style.right = "5px";
     button.style.cursor = "pointer";
 
+=======
+>>>>>>> bfd44405ef7df65febc44de06fdc871b42fce7c7
     button.addEventListener("click", async (event) => {
       const doctorId = event.target.getAttribute("data-id");
       await approveDoctor(doctorId);
@@ -94,43 +95,45 @@ async function loadPendingDoctors() {
   });
 }
 
-// Function to approve a doctor
+// Approve Doctor
 async function approveDoctor(doctorId) {
   const doctorRef = doc(db, "users", doctorId);
   await updateDoc(doctorRef, { status: "approved" });
   alert("Doctor approved!");
-  loadPendingDoctors(); // Reload the list
+  loadPendingDoctors();
 }
 
-// Load pending doctors on page load
-loadPendingDoctors();
+// Add Medicine
+document
+  .getElementById("medicineForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const userEmail = localStorage.getItem("userEmail");
-  console.log("Retrieved email from localStorage:", userEmail); // Debugging
+    const medicineName = document.getElementById("medicineName").value.trim();
+    const medicineQuantity = document
+      .getElementById("medicineQuantity")
+      .value.trim();
 
-  if (userEmail) {
-    const emailDisplay = document.getElementById("userEmailDisplay");
-    if (emailDisplay) {
-      emailDisplay.textContent = userEmail;
-    } else {
-      console.error("Element with id 'userEmailDisplay' not found.");
+    if (medicineName === "" || medicineQuantity === "") {
+      alert("Please fill in all fields");
+      return;
     }
-  } else {
-    console.error("Email not found in localStorage.");
-  }
-});
 
-// // Open the Modal
-// openFormBtn.addEventListener("click", () => {
-//   modal.style.display = "block";
-// });
+    try {
+      await addDoc(collection(db, "medicines"), {
+        name: medicineName,
+        quantity: parseInt(medicineQuantity, 10),
+      });
 
-// // Close the Modal
-// closeBtn.addEventListener("click", () => {
-//   modal.style.display = "none";
-// });
+      document.getElementById("medicineForm").reset();
+      alert("Medicine added successfully!");
+    } catch (error) {
+      console.error("Error adding medicine:", error);
+      alert("Failed to add medicine.");
+    }
+  });
 
+<<<<<<< HEAD
 // const fetchMedicines = async () => {
 //   const querySnapshot = await getDocs(collection(db, "medicines"));
 //   medicineList.innerHTML = ""; // Clear previous entries
@@ -191,3 +194,23 @@ document.addEventListener("DOMContentLoaded", () => {
 //     modal.style.display = "none";
 //   }
 // });
+=======
+// Load Medicines in Real-time
+function loadMedicines() {
+  const medicineList = document.getElementById("medicineList");
+
+  onSnapshot(collection(db, "medicines"), (snapshot) => {
+    medicineList.innerHTML = "";
+    snapshot.forEach((docSnapshot) => {
+      const medicine = docSnapshot.data();
+      const listItem = document.createElement("li");
+      listItem.textContent = `${medicine.name} - ${medicine.quantity}`;
+      medicineList.appendChild(listItem);
+    });
+  });
+}
+
+// Initialize Data
+loadPendingDoctors();
+loadMedicines();
+>>>>>>> bfd44405ef7df65febc44de06fdc871b42fce7c7

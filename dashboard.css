@@ -33,3 +33,21 @@ button {
 button:hover {
   background-color: darkgreen;
 }
+
+input {
+  padding: 5px;
+  margin: 5px;
+  width: 80%;
+}
+
+form button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: darkblue;
+}

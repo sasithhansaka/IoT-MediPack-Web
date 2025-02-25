@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <head>
       <link
         rel="stylesheet"
@@ -11,67 +12,36 @@
     </head>
 
     <link rel="stylesheet" href="./recption-dashboard.css" />
+=======
+    <title>Reception Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+>>>>>>> bfd44405ef7df65febc44de06fdc871b42fce7c7
   </head>
   <body>
-    <div class="nav">
-      <div class="profile-circle">
-        <i class="fa-solid fa-user"></i>
-      </div>
-
-      <div class="notication-circle">
-        <i class="fa-solid fa-bell"></i>
-      </div>
-      <p class="email-nav"><span id="userEmailDisplay"></span></p>
+    <div class="container">
+      <h2>Pending Doctor Approvals</h2>
+      <ul id="pendingDoctorsList"></ul>
     </div>
 
-    <div class="hero-container">
-      <div class="pending-doctor-container">
-        <h2>Pending Doctor Approvals</h2>
-        <p id="pendingDoctorsList"></p>
-      </div>
-      <div>
-<!-- Add Medicine Button -->
-<!-- <button id="openMedicineForm">Add Medicine</button> -->
-<button id="openMedicineForm">Add admins</button>
-
-
-<!-- Medicine Form Modal
-<div id="medicineModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Add Medicine</h2>
-    <form id="medicineForm">
-      <label for="medicineName">Medicine Name:</label>
-      <input type="text" id="medicineName" required />
-
-      <label for="brandName">Brand Name:</label>
-      <input type="text" id="brandName" required />
-
-      <label for="stockLevel">Stock Level:</label>
-      <select id="stockLevel" required>
-        <option value="high">High</option>
-        <option value="low">Low</option>
-      </select>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</div>
-<div class="medicines-container">
-  <h2>All Medicines</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Medicine Name</th>
-        <th>Brand Name</th>
-        <th>Stock Level</th>
-      </tr>
-    </thead>
-    <tbody id="medicineList"></tbody>
-  </table>
-</div> -->
-
-</div>
+    <div class="container">
+      <h2>Add Medicine</h2>
+      <form id="medicineForm">
+        <input
+          type="text"
+          id="medicineName"
+          placeholder="Medicine Name"
+          required
+        />
+        <input
+          type="number"
+          id="medicineQuantity"
+          placeholder="Quantity"
+          required
+        />
+        <button type="submit">Add Medicine</button>
+      </form>
+      <h3>Available Medicines</h3>
+      <ul id="medicineList"></ul>
     </div>
 
     <script type="module" src="reception-dashboard.js"></script>
