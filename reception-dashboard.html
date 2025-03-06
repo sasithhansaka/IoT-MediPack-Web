@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+    <head>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      />
+    </head>
+
+    <link rel="stylesheet" href="./recption-dashboard.css" />
+=======
+    <title>Reception Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+>>>>>>> bfd44405ef7df65febc44de06fdc871b42fce7c7
+  </head>
+  <body>
+    <div class="container">
+      <h2>Pending Doctor Approvals</h2>
+      <ul id="pendingDoctorsList"></ul>
+    </div>
+
+    <div class="container">
+      <h2>Add Medicine</h2>
+      <form id="medicineForm">
+        <input
+          type="text"
+          id="medicineName"
+          placeholder="Medicine Name"
+          required
+        />
+        <input
+          type="number"
+          id="medicineQuantity"
+          placeholder="Quantity"
+          required
+        />
+        <button type="submit">Add Medicine</button>
+      </form>
+      <h3>Available Medicines</h3>
+      <ul id="medicineList"></ul>
+    </div>
+
+    <script type="module" src="reception-dashboard.js"></script>
+  </body>
+</html>

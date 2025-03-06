@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./doctor-dashboard.css" />
+    <script type="module" src="./doctor-dashboard.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="profile-circle">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="notification-circle">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <p class="email-nav"><span id="userEmailDisplay"></span></p>
+    </div>
+
+    <div class="container">
+      <h2>Add Medicine for Patient</h2>
+      <form id="addMedicineForm">
+        <label for="medicineCount">Medicine Count:</label>
+        <input type="number" id="medicineCount" required />
+
+        <label for="patientEmail">Patient Email:</label>
+        <input type="text" id="patientEmail" autocomplete="off" required />
+        <div id="suggestions" class="suggestion-box"></div>
+
+        <label for="progress">Progress:</label>
+        <select id="progress" required>
+          <option value="Dispense">Dispense</option>
+          <option value="Not Dispensed">Not Dispensed</option>
+        </select>
+
+        <button type="submit">Add Medicine</button>
+      </form>
+
+      <div>
+        <h2>Past Prescriptions</h2>
+        <input type="text" id="searchPatientEmail" placeholder="Search Patient Email" />
+        <button id="searchBtn">Search</button>
+        <div id="prescriptionsList"></div>
+        
+
+
+        <h2>Add Medicine for Patient</h2>
+
+
+        <form id="addMedicineForm">
+          <label for="medicineCount">Medicine Count:</label>
+          <input type="number" id="medicineCount" required />
+  
+          <label for="patientEmail">Patient Email:</label>
+          <input type="text" id="patientEmail" autocomplete="off" required />
+          <div id="suggestions" class="suggestion-box"></div>
+  
+          <label for="progress">Progress:</label>
+          <select id="progress" required>
+            <option value="Dispense">Dispense</option>
+            <option value="Not Dispensed">Not Dispensed</option>
+          </select>
+  
+          <button type="submit">Add Medicine</button>
+        </form>
+
+      </div>
+    </div>
+
+    <style>
+      .suggestion-box {
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        max-height: 150px;
+        overflow-y: auto;
+        width: 300px;
+      }
+      .suggestion-item {
+        padding: 8px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+      }
+      .suggestion-item:hover {
+        background: #f0f0f0;
+      }
+      .no-match {
+        padding: 8px;
+        color: red;
+      }
+      #prescriptionsList {
+        margin-top: 20px;
+      }
+      .prescription-item {
+        padding: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
