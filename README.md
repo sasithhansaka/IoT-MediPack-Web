@@ -41,8 +41,7 @@ IoT-MediPack-Web/
 ## Setup Instructions
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/IoT-MediPack-Web.git
-   cd IoT-MediPack-Web
+   git clone https://github.com/sasithhansaka/IoT-MediPack-Web.git
    ```
 2. **Open in a Code Editor**
    - Use **VS Code** or any preferred editor to modify the files.
