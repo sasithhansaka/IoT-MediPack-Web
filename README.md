@@ -62,6 +62,7 @@ This project is licensed under the **MIT License**.
 
 ## check out 
 check out my linkedin profile to see the full project
+lINKEDIN : https://www.linkedin.com/in/sasith-hansaka/
 
 ---
 Developed by **[SASITH-HANSAKA]**
