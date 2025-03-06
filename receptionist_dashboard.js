@@ -18,6 +18,8 @@ function loadDashboard() {
                 const row = doctorsTable.insertRow();
                 const cell1 = row.insertCell(0);
                 const cell2 = row.insertCell(1);
+                
+// folder stucture updated 
 
                 cell1.textContent = userData.username;
                 const approveButton = document.createElement('button');

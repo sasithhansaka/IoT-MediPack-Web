@@ -6,7 +6,7 @@ function initializeDashboard() {
     const prescriptionForm = document.getElementById('prescriptionForm');
     const errorDiv = document.getElementById('error');
     const successDiv = document.getElementById('success');
-
+// ?username=doctor1
     // Retrieve the doctor's username from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const doctorUsername = urlParams.get('username');
