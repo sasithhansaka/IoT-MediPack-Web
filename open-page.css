@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.IMG-container {
+    position: relative;
+    width: 500px;
+    height: 500px;   
+}
+
+.background-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Pushed back */
+}
+
+.overlay-images {
+    position: absolute;
+  
+    z-index: 2; /* Above background */
+}
+
+.overlay-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 480px;
+    object-fit: contain;
+}
+
+.text-container p{
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;  
+    color: rgb(55, 53, 53);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 160px;
+}
+
+.get-start-button{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.curved-section {
+    position: relative;
+    background-color: #1669c7; /* Blue background */
+    height: 350px;
+    margin-top: 0;
+    top: -120px;
+    
+    
+
+}
+
+.curved-section svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+

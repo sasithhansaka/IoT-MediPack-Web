@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receptionist Dashboard</title>
+    <link rel="stylesheet" href="receptionist_dashboard.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        class="logo"
+        width="100"
+        height="100"
+      >
+        <rect x="20" y="20" width="60" height="50" rx="8" fill="#4CAF50" />
+        <rect x="30" y="10" width="40" height="15" fill="#3E8E41" />
+        <rect x="30" y="5" width="40" height="10" fill="#2C6B29" />
+        <circle cx="50" cy="50" r="10" fill="#FFEB3B" />
+        <circle cx="50" cy="50" r="5" fill="#FBC02D" />
+        <line
+          x1="50"
+          y1="60"
+          x2="50"
+          y2="80"
+          stroke="#FF5722"
+          stroke-width="2"
+        />
+        <circle cx="50" cy="80" r="5" fill="#FF5722" />
+      </svg>
+      <h2>Receptionist Dashboard</h2>
+      <div id="doctorInfo" class="doctor-info">
+        <span class="notification-icon">🔔</span>
+        <span class="profile">Welcome, Receptionist!</span>
+        <a href="profile.html" class="profile-link">Profile</a>
+      </div>
+    </div>
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Receptionist Dashboard</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <div class="container">
+          <div class="status" id="status"></div>
+
+          <h2>Doctors Pending Approval</h2>
+          <p>
+            Below is the list of doctors who are awaiting approval. You can
+            review their details and approve or reject them.
+          </p>
+          <table id="doctorsTable">
+            <thead>
+              <tr>
+                <th>Doctor Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+
+          <h2>All Doctors</h2>
+          <p>
+            Here are all the doctors who are registered and approved. You can
+            view their details or manage their information.
+          </p>
+          <table id="allDoctorsTable">
+            <thead>
+              <tr>
+                <th>Doctor Name</th>
+                <th>Approved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dr. Sarah Johnson</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Dr. Mark Thompson</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Registered Patients</h2>
+          <p>
+            Below are the patients who have registered. You can manage their
+            appointments and view their treatment history.
+          </p>
+          <table id="patientsTable">
+            <thead>
+              <tr>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>john_doe123</td>
+              </tr>
+              <tr>
+                <td>jane_smith456</td>
+              </tr>
+              <tr>
+                <td>alice_williams789</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </body>
+    </html>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBx5fhNrSL6mHjgak_SpQIKK0DsXXQXUMk",
+        authDomain: "iotproject-1cfa2.firebaseapp.com",
+        databaseURL:
+          "https://iotproject-1cfa2-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "iotproject-1cfa2",
+        storageBucket: "iotproject-1cfa2.firebasestorage.app",
+        messagingSenderId: "844629933940",
+        appId: "1:844629933940:web:e0ef982b5dc6fab3e1f621",
+        measurementId: "G-QM1KPT6B5T",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="receptionist_dashboard.js"></script>
+  </body>
+</html>

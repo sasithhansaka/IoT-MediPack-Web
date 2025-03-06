@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* login.css */
+
+/* General styles */
+/* login.css */
+
+/* General styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the registration form */
+.container {
+  padding: 40px; /* Increased padding */
+  max-width: 600px; /* Increased max-width */
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Header for the form */
+h1 {
+  color: #1669c7;
+  margin-bottom: 20px;
+}
+
+/* Welcome message */
+p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  background-color: #1669c7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #125ca8;
+}
+
+/* Link to login page */
+a {
+  color: #1669c7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Link to login page (Text styling) */
+p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Information section */
+.info {
+  margin-top: 30px;
+  color: #555;
+  font-size: 14px;
+  text-align: left;
+}
+
+.info h3 {
+  color: #1669c7;
+  margin-bottom: 10px;
+}
+
+.info p {
+  margin: 5px 0;
+}
+
+/* Error message styling */
+#error {
+  color: red;
+  font-weight: bold;
+}
+
+.curved-section {
+  position: relative;
+  background-color: #1669c757; /* Blue background */
+  height: 250px;
+  margin-top: 0;
+  top: -120px;
+  opacity: 0.3;
+}
+
+.curved-section svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}

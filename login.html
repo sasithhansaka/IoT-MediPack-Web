@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medipack Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <p>Welcome to the login page! Please fill out the form below to login your account. provide a username and password to get started.</p>
+
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+            
+            <p>Don't have an account? <a href="main.html">Go to Register</a></p>
+        </form>
+        <div class="error" id="error"></div>
+        
+        <div class="info">
+            <p>Welcome to the system! Please log in to access your account.</p>
+            <p>For any issues, feel free to contact support.</p>
+        </div>
+    </div>
+
+    <div class="curved-section">
+        <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,96L80,128C160,160,320,224,480,218.7C640,213,800,139,960,101.3C1120,64,1280,64,1360,64L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+          
+        </svg>
+        
+      </div>
+    
+
+ 
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+ 
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <!-- Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <!-- Your Firebase Configuration -->
+    <script>
+        // Replace with your Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBx5fhNrSL6mHjgak_SpQIKK0DsXXQXUMk",
+            authDomain: "iotproject-1cfa2.firebaseapp.com",
+            databaseURL: "https://iotproject-1cfa2-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "iotproject-1cfa2",
+            storageBucket: "iotproject-1cfa2.firebasestorage.app",
+            messagingSenderId: "844629933940",
+            appId: "1:844629933940:web:e0ef982b5dc6fab3e1f621",
+            measurementId: "G-QM1KPT6B5T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="login.js"></script>
+</body>
+</html>

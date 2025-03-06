@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="doctor_dashboard.css">
+</head>
+<body>
+    <div class="navbar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo" width="100" height="100">
+            <rect x="20" y="20" width="60" height="50" rx="8" fill="#4CAF50"/>
+            <rect x="30" y="10" width="40" height="15" fill="#3E8E41"/>
+            <rect x="30" y="5" width="40" height="10" fill="#2C6B29"/>
+            <circle cx="50" cy="50" r="10" fill="#FFEB3B"/>
+            <circle cx="50" cy="50" r="5" fill="#FBC02D"/>
+            <line x1="50" y1="60" x2="50" y2="80" stroke="#FF5722" stroke-width="2"/>
+            <circle cx="50" cy="80" r="5" fill="#FF5722"/>
+          </svg>        <h2>Doctor Dashboard</h2>
+        <div id="doctorInfo" class="doctor-info">
+            <span class="notification-icon">🔔</span> 
+            <span class="profile">Welcome, Doctor!</span> 
+            <a href="profile.html" class="profile-link">Profile</a> 
+        </div>
+    </div>
+    <div style="display: flex; gap: 20px;">
+
+        <div class="previo">
+            <h3>Welcome, Doctore</h3>
+            <p  style="margin-top: 10px; margin-bottom: 10px;">Here, you can monitor your patients' treatment progress and manage appointments effectively. Stay updated with the latest medical trends and ensure your patients' well-being by providing personalized care.</p>
+            <p>Use the dashboard to navigate through various sections, from prescriptions to appointment schedules, all in one place.</p>
+        </div>
+        <div class="container" style="padding-left: 100px;">
+            <div id="currentTime"></div>
+            <h2>Add Prescription</h2>
+            <form id="prescriptionForm">
+                <label for="patientUsername">Patient Username:</label>
+                <input type="text" id="patientUsername" required>
+                <label for="medicineCount">Medicine Count:</label>
+                <input type="number" id="medicineCount" required>
+                <button type="submit">Add Prescription</button>
+            </form>
+            <div class="error" id="error"></div>
+            <div class="success" id="success"></div>
+        </div>
+
+    
+        <h1>etgehfce etfvefvgefgc gef fgef ef gg egfeg fgfe gegfeg fehfhf jeej e</h1>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <!-- Your Firebase Configuration -->
+    <script>
+        // Replace with your Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBx5fhNrSL6mHjgak_SpQIKK0DsXXQXUMk",
+            authDomain: "iotproject-1cfa2.firebaseapp.com",
+            databaseURL: "https://iotproject-1cfa2-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "iotproject-1cfa2",
+            storageBucket: "iotproject-1cfa2.firebasestorage.app",
+            messagingSenderId: "844629933940",
+            appId: "1:844629933940:web:e0ef982b5dc6fab3e1f621",
+            measurementId: "G-QM1KPT6B5T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="doctor_dashboard.js"></script>
+</body>
+</html>
