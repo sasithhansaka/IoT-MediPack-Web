@@ -35,7 +35,7 @@ IoT-MediPack-Web/
 - **HTML** - Structure of the web pages
 - **CSS** - Styling for the user interface
 - **JavaScript** - Functionality and interaction
-- **Firebase** (Optional) - For real-time database and authentication
+- **Firebase** - For real-time database and authentication
 - **ESP32 (IoT Integration)** - Used for medicine dispensing automation
 
 ## Setup Instructions
@@ -59,6 +59,9 @@ Feel free to contribute! Fork the repository, create a new branch, and submit a 
 
 ## License
 This project is licensed under the **MIT License**.
+
+## check out 
+check out my linkedin profile to see the full project
 
 ---
 Developed by **[SASITH-HANSAKA]**
